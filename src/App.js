@@ -24,7 +24,7 @@ const end = setInterval(() => {
   <BrowserRouter>
   <Routes>
     <Route element={<GameCmpnt.Game/>} path="/Game"/>
-    <Route element={<Startscreen name="Sliding Cube"/>} path="/Startup"/>
+    <Route element={<Startscreen name="Sliding Cube"/>} path="/"/>
    </Routes>
   </BrowserRouter>
   </>
