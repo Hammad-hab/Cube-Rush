@@ -1,9 +1,11 @@
 import * as THREE from "three";
 import User from "./User.controls";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import {AiOutlineReload} from "react-icons/ai"
+import { Link } from "react-router-dom";
 class Game {
   constructor(props) {
-    localStorage.setItem("game-finished", "false")
+    localStorage.setItem("game-finished", "false ")
     try {
       var scripts = ``
       var state = "noState";
@@ -162,8 +164,6 @@ class Game {
             window.removeEventListener("keypress", User.controlFunction);
             setTimeout(() => {
               cancelAnimationFrame(id);
-              window.open("https://cube-ashen.vercel.app/Game")
-              window.close()
             }, 1000);
           }
         }
@@ -173,6 +173,7 @@ class Game {
       if (!(localStorage.getItem("game-finished"))) {
          localStorage.setItem("game-finished", "false")
       }
+      window.open()
     } catch (error) {
       localStorage.setItem("serialNum", "1");
       window.location.reload();
@@ -184,6 +185,8 @@ class Game {
           <p className="hover">
             <strong>Level </strong>
             {localStorage.getItem("serialNum")}
+            <br/>
+            <Link to="/Game"><AiOutlineReload/></Link>
           </p>
           <button
             className={`hover button ${state}`}
