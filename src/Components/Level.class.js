@@ -164,6 +164,8 @@ class Game {
             window.removeEventListener("keypress", User.controlFunction);
             setTimeout(() => {
               cancelAnimationFrame(id);
+              window.open("https://cube-ashen.vercel.app/Game")
+              window.close()
             }, 1000);
           }
         }
@@ -173,7 +175,6 @@ class Game {
       if (!(localStorage.getItem("game-finished"))) {
          localStorage.setItem("game-finished", "false")
       }
-      window.open()
     } catch (error) {
       localStorage.setItem("serialNum", "1");
       window.location.reload();
