@@ -185,8 +185,6 @@ class Game {
           <p className="hover">
             <strong>Level </strong>
             {localStorage.getItem("serialNum")}
-            <br/>
-            <Link to="/Game"><AiOutlineReload/></Link>
           </p>
           <button
             className={`hover button ${state}`}
