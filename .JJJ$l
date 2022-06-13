@@ -1,0 +1,3 @@
+$$$%^^gconnect = CONNECT[https://docs.google.com/document/d/1zCgYty8DPxectpC_PBS00puEdI1PnfulZowEUWBWLiU/edit#heading=h.u219t4a740rm]
+DELETE[gconnect.BODY.content="DRAFT"]
+RETURN NULL

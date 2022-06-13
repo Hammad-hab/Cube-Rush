@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gochi+Hand&display=swap');
+
+* {
+    font-family: arial;
+}
+
+body {
+    margin: 0px;
+    overflow-y: hidden;
+}
+
+.hover {
+    position: absolute;
+}
+
+.atTHEbottom {
+    margin-top: 45%;
+    margin-left: 85%;
+}
+
+.i_b {
+    background-color: black;
+    padding: 50px;
+    overflow-y: hidden;
+    width: 100px;
+    height: 130px;
+    color: aliceblue;
+    display: inline;
+    padding-top: 10px;
+}
+
+.gld_chld {
+    border: 1px solid goldenrod;
+    width: auto;
+    height: 105px;
+    animation-name: ppp;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    display: inline-block;
+    margin-left: -1px;
+    margin-top: -1px;
+    overflow-x: auto;
+}
+
+@keyframes  ppp {
+  50% {border-color: gold};
+  50% {border-color: goldenrod;}
+}
+
+
+.bt_btn_hldr {
+    margin: 0px auto;
+    background-color: rgb(27, 26, 26);
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    padding: 10px;
+    padding-bottom: 5px;
+    /* margin-top: 50%; */
+    /* margin-bottom: -100px; */
+    /* position: absolute; */
+}
+
+.motion_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.inner_icon {
+    width: auto;
+    height: 101px;
+    display: inline-block;
+}
+
+.ImCross {
+  margin-left: 115%;
+  /* margin-bottom: 50%; */
+  margin-top: -100px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+b {
+    font-family: 'Gochi Hand', cursive;
+}
+
+
+.center {
+     margin-left: 35%;
+     font-size: 80px;
+    /* margin-top: 15%; */
+    animation: hover 5s infinite;
+    text-shadow:  2px 2px #ff0000;
+
+}
+.center::first-letter {
+    font-size: larger;
+    /* position: absolute; */
+    animation: rotate 5s infinite;
+}
+
+@keyframes hover {
+    50% {
+        margin-top: 5%;
+    }
+}
+
+
+#blocker {
+    padding: 100px;
+}
+
+#sustainer {
+    height: 200px;
+    overflow-y: auto;
+}
+
+#Play {
+    margin-top: 5%;
+    padding: 10px;
+    width:200px;
+    margin-left: 45%;
+    border-radius: 10px;
+    border: none;
+    background-color: green;
+}
+
+#Play:active {
+    opacity: 80%;
+}
+
+pre {
+    font-family: monospace;
+    text-align: center;
+}
+
+
+/* button[id="Next"]  */
+.button {
+    padding: 10px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: rgb(57, 57, 253);
+    color: white;
+    margin-left: 80%;
+}
+
+#Previous {
+    margin-top: 53%;
+}
+#Next {
+    margin-top: 50%;
+}
+
+k
+
+.won {
+    background-color: red;
+}

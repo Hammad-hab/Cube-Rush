@@ -1,0 +1,33 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "dev": "parcel src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.2.1",
+    "prettier": "^2.5.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "cannon-es": "^0.19.0",
+    "cannon-es-debugger": "^1.0.0",
+    "physijs": "^1.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
+    "three": "^0.141.0",
+    "worker-loader": "^3.0.8"
+  },
+  "targets": {
+    "module": false,
+    "main": false,
+    "types": false
+  }
+}
