@@ -19,7 +19,16 @@ const end = setInterval(() => {
     clearInterval(end)
   } 
 }, 100);
- return <GameCmpnt.Game/>
+ return (
+  <>
+  <BrowserRouter>
+  <Routes>
+    <Route element={<GameCmpnt.Game/>} path="/Game"/>
+    <Route element={<Startscreen name="Sliding Cube"/>} path="/"/>
+   </Routes>
+  </BrowserRouter>
+  </>
+)
 };
 
 export default App;
