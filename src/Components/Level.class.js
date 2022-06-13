@@ -186,7 +186,7 @@ class Game {
           <p className="hover">
             <strong>Level </strong>
             {localStorage.getItem("serialNum")}
-             <pre>By Hammad Ali</pre><br/>
+             <pre>By Hammad Ali</pre>
              <pre>v1.0.0</pre>
           </p>
           <button
