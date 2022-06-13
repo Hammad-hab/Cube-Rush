@@ -162,7 +162,7 @@ class Game {
             window.removeEventListener("keypress", User.controlFunction);
             setTimeout(() => {
               cancelAnimationFrame(id);
-              window.location.replace("https://slidingcube.netlify.app/Game")
+              window.location.reload()
             }, 1000);
           }
         }
