@@ -204,9 +204,10 @@ class Game {
             gravity += 0.01;
             window.removeEventListener("keypress", User.controlFunction);
             setTimeout(() => {
-              // cancelAnimationFrame(id);
+              cancelAnimationFrame(id);
             if (state === "lost") {
               if (done === false) {
+                document.body.remove()
               window.location.reload()
               }
             }
