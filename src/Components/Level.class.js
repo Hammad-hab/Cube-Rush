@@ -16,7 +16,7 @@ const Quotes = [{
   s: "Anonymous"
 }]
 function Trigger () {
-  q = Quotes[Math.floor(Math.random() * Quotes.length)]
+ var q = Quotes[Math.floor(Math.random() * Quotes.length)]
   return (
     <>
     <div className="overlay" style={{width: window.innerWidth, height: window.innerHeight}}>
