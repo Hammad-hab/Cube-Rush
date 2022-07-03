@@ -164,7 +164,7 @@ class Game {
             setTimeout(() => {
               cancelAnimationFrame(id);
             if (state === "lost") {
-              
+               document.body.remove()
               window.location.reload()
             }
             }, 1000);
