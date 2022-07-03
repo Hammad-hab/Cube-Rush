@@ -1,9 +1,48 @@
 import * as THREE from "three";
 import User from "./User.controls";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import {AiOutlineReload} from "react-icons/ai"
+import { useState } from "react";
+import {TbPlayerTrackNext, TbPlayerTrackPrev} from "react-icons/tb"
+import {RiRestartFill} from "react-icons/ri"
+const Quotes = [{
+  q: "The game is never over until it is over",
+  s: "Lugi Lemencello",
+  f: `Escape from Mr. Lemoncello's library. by Chris Grabenstein`
+}, {
+  q: "winners never quit, and quitters never win",
+  s: "Anonymous"
+}, {
+  q: "We learn more from failing than from winning",
+  s: "Anonymous"
+}]
+function Trigger () {
+  q = Quotes[Math.floor(Math.random() * Quotes.length)]
+  return (
+    <>
+    <div className="overlay" style={{width: window.innerWidth, height: window.innerHeight}}>
+     <h1>"{q.q}"</h1>
+     <h3>{q.s}</h3>
+     <h4>{q.f}</h4>
+    <TbPlayerTrackNext className="next" onClick={() => {
+      localStorage.setItem("serialNum", (Number(localStorage.getItem("serialNum")) + 1))
+      window.location.reload()
+    }}/>
+    <br/>
+    <RiRestartFill className="next" onClick={() => {
+      window.location.reload()
+    }} />
+    <br/>
+    <TbPlayerTrackPrev className="next" onClick={() => {
+        localStorage.setItem("serialNum", (Number(localStorage.getItem("serialNum")) - 1))
+        window.location.reload()
+    }} />
+    </div>
+    </>
+  )
+}
 class Game {
   constructor(props) {
+    const [done, setDone] = useState(false)
     localStorage.setItem("game-finished", "false ")
     try {
       var scripts = ``
@@ -121,6 +160,9 @@ class Game {
             eval(scripts)
           }, 2000);
           this.blocks = [];
+       
+          setDone(true)
+          
         } else {
           if (User.movement.x === true) {
             mesh.position.x += 1;
@@ -148,7 +190,7 @@ class Game {
           } 
         }
 
-        if (this.blocks[this.i]) {
+        if (this.blocks[this.i] ) {
           if (
             mesh.position.z !== this.blocks[this.i].position.z ||
             mesh.position.x !== this.blocks[this.i].position.x
@@ -162,10 +204,11 @@ class Game {
             gravity += 0.01;
             window.removeEventListener("keypress", User.controlFunction);
             setTimeout(() => {
-              cancelAnimationFrame(id);
+              // cancelAnimationFrame(id);
             if (state === "lost") {
-               document.body.remove()
+              if (done === false) {
               window.location.reload()
+              }
             }
             }, 1000);
           }
@@ -180,6 +223,7 @@ class Game {
     } catch (error) {
       localStorage.setItem("serialNum", "1");
       window.location.reload();
+    console.error(error)
     }
 
     this.component = () => {
@@ -190,35 +234,9 @@ class Game {
             {localStorage.getItem("serialNum")}
             <br/>
           </p>
-          <button
-            className={`hover button ${state}`}
-            id="Next"
-            onClick={() => {
-              if (state === "won") {
-                localStorage.setItem(
-                  "serialNum",
-                  Number(localStorage.getItem("serialNum")) + 1
-                );
-                window.location.reload();
-              }
-            }}
-          >
-            Next
-          </button>
-          <button
-            className="hover button"
-            id="Previous"
-            onClick={() => {
-              //  if (state === "won"){
-              localStorage.setItem(
-                "serialNum",
-                Number(localStorage.getItem("serialNum")) - 1
-              );
-              window.location.reload();
-            }}
-          >
-            Previous
-          </button>
+          {
+            done === true ? Trigger() : ""
+          }
         </>
       );
     };
