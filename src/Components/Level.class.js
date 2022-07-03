@@ -2,7 +2,6 @@ import * as THREE from "three";
 import User from "./User.controls";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import {AiOutlineReload} from "react-icons/ai"
-
 class Game {
   constructor(props) {
     localStorage.setItem("game-finished", "false ")
@@ -163,7 +162,7 @@ class Game {
             gravity += 0.01;
             window.removeEventListener("keypress", User.controlFunction);
             setTimeout(() => {
-              cancelAnimationFrame(id);
+              // cancelAnimationFrame(id);
             if (state === "lost") {
               window.location.reload()
             }
@@ -189,7 +188,6 @@ class Game {
             <strong>Level </strong>
             {localStorage.getItem("serialNum")}
             <br/>
-            <Link to="/"><AiOutlineReload/></Link>
           </p>
           <button
             className={`hover button ${state}`}
