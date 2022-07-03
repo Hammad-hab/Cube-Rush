@@ -164,9 +164,9 @@ class Game {
             window.removeEventListener("keypress", User.controlFunction);
             setTimeout(() => {
               cancelAnimationFrame(id);
-              if (state === "lost") {
-              window.open("https://cube-ashen.vercel.app")
-              window.close()}
+            if (state === "lost") {
+              window.location.reload()
+            }
             }, 1000);
           }
         }
@@ -176,6 +176,7 @@ class Game {
       if (!(localStorage.getItem("game-finished"))) {
          localStorage.setItem("game-finished", "false")
       }
+
     } catch (error) {
       localStorage.setItem("serialNum", "1");
       window.location.reload();
@@ -187,8 +188,8 @@ class Game {
           <p className="hover">
             <strong>Level </strong>
             {localStorage.getItem("serialNum")}
-             <pre>By Hammad Ali</pre>
-             <pre>v1.0.0</pre>
+            <br/>
+            <Link to="/"><AiOutlineReload/></Link>
           </p>
           <button
             className={`hover button ${state}`}
