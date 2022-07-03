@@ -160,7 +160,8 @@ class Game {
             eval(scripts)
           }, 2000);
           this.blocks = [];
-       
+                 cancelAnimationFrame(id)
+
           setDone(true)
           
         } else {
