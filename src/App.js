@@ -1,28 +1,177 @@
-import Startscreen from "./Components/StartScreen.cmpnt";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
-import GameCmpnt from "./Components/Game.cmpnt"
+import Game from "./Components/Level.class";
+
 import "./style.css";
 const App = () => {
-const end = setInterval(() => {
-  if (localStorage.getItem("game-finished") === "true") {
-    if ( document.getElementById("root")) {
-    document.getElementById("root").remove()
-    const root = document.createElement("div")
-    root.setAttribute("id", "root")
-    document.body.appendChild(root)
-    }
-    if ( document.getElementById("canvas")) {
-    document.getElementById("canvas").remove()
-    }
-    console.log("ye")
-    document.body.innerHTML = "U have completed the game"
-    clearInterval(end)
-  } 
-}, 100);
 
+var level = new Game({
+  positions: {
+    1: [
+      { x: 0, y: 0, z: 0 },
+      { x: 1, y: 0, z: 0 },
+      { x: 2, y: 0, z: 0 },
+      { x: 3, y: 0, z: 0 },
+      { x: 4, y: 0, z: 0 },
+      { x: 5, y: 0, z: 0 },
+      { x: 6, y: 0, z: 0 },
+      { x: 7, y: 0, z: 0 },
+      { x: 8, y: 0, z: 0 },
+      { x: 9, y: 0, z: 0 },
+      { x: 10, y: 0, z: 0 },
+      { x: 11, y: 0, z: 0 },
+      { x: 12, y: 0, z: 0 },
+      { x: 13, y: 0, z: 0 },
+      { x: 14, y: 0, z: 0, isCheckPoint: !0 },
+      { x: 14, y: 0, z: 1 },
+      { x: 14, y: 0, z: 2 },
+      { x: 14, y: 0, z: 3 },
+      { x: 14, y: 0, z: 4 },
+      { x: 14, y: 0, z: 5 },
+      { x: 14, y: 0, z: 6 },
+      { x: 14, y: 0, z: 7 },
+      { x: 14, y: 0, z: 8 },
+      { x: 14, y: 0, z: 9, winAt: true },
+    ],
+    2: [
+      { x: 0, y: 0, z: 0 },
+      { x: 1, y: 0, z: 0 },
+      { x: 2, y: 0, z: 0 },
+      { x: 3, y: 0, z: 0 },
+      { x: 4, y: 0, z: 0 },
+      { x: 5, y: 0, z: 0 },
+      { x: 6, y: 0, z: 0 },
+      { x: 7, y: 0, z: 0 },
+      { x: 8, y: 0, z: 0 },
+      { x: 9, y: 0, z: 0 },
+      { x: 10, y: 0, z: 0 },
+      { x: 11, y: 0, z: 0 },
+      { x: 12, y: 0, z: 0 },
+      { x: 13, y: 0, z: 0 },
+      { x: 14, y: 0, z: 0 },
+      { x: 14, y: 0, z: 1 },
+      { x: 14, y: 0, z: 2 },
+      { x: 14, y: 0, z: 3 },
+      { x: 14, y: 0, z: 4 },
+      { x: 14, y: 0, z: 5 },
+      { x: 14, y: 0, z: 6 },
+      { x: 14, y: 0, z: 7 },
+      { x: 14, y: 0, z: 8 },
+      { x: 14, y: 0, z: 9, isCheckPoint: true },
+      { x: 15, y: 0, z: 9 },
+      { x: 16, y: 0, z: 9 },
+      { x: 17, y: 0, z: 9 },
+      { x: 18, y: 0, z: 9 },
+      { x: 19, y: 0, z: 9 },
+      { x: 20, y: 0, z: 9 },
+      { x: 21, y: 0, z: 9 },
+      { x: 22, y: 0, z: 9 },
+      { x: 23, y: 0, z: 9 },
+      { x: 24, y: 0, z: 9 },
+      { x: 25, y: 0, z: 9, isCheckPoint: !0 },
+      { x: 25, y: 0, z: 10 },
+      { x: 25, y: 0, z: 11 },
+      { x: 25, y: 0, z: 12 },
+      { x: 25, y: 0, z: 13, winAt: true },
+    ],
+    3: [
+      { x: 0, y: 0, z: 0 },
+      { x: 1, y: 0, z: 0 },
+      { x: 2, y: 0, z: 0 },
+      { x: 3, y: 0, z: 0, isCheckPoint: true },
+      { x: 3, y: 0, z: 1 },
+      { x: 3, y: 0, z: 2 },
+      { x: 3, y: 0, z: 3, isCheckPoint: true },
+      { x: 4, y: 0, z: 3 },
+      { x: 5, y: 0, z: 3 },
+      { x: 6, y: 0, z: 3 },
+      { x: 7, y: 0, z: 3 },
+      { x: 8, y: 0, z: 3 },
+      { x: 9, y: 0, z: 3 },
+      { x: 10, y: 0, z: 3 },
+      { x: 11, y: 0, z: 3, isCheckPoint: true },
+      { x: 11, y: 0, z: 2 },
+      { x: 11, y: 0, z: 1 },
+      { x: 11, y: 0, z: 0 },
+      { x: 12, y: 0, z: 0 },
+      { x: 13, y: 0, z: 0 },
+      { x: 14, y: 0, z: 0 },
+      { x: 15, y: 0, z: 0, winAt: true },
+    ],
+    4: [
+      { x: 0, y: 0, z: 0 },
+      { x: 1, y: 0, z: 0 },
+      { x: 2, y: 0, z: 0 },
+      { x: 3, y: 0, z: 0, isCheckPoint: true },
+      { x: 3, y: 0, z: 1 },
+      { x: 3, y: 0, z: 2 },
+      { x: 3, y: 0, z: 3 },
+      { x: 4, y: 0, z: 3 },
+      { x: 5, y: 0, z: 3 },
+      { x: 6, y: 0, z: 3, isCheckPoint: !0 },
+      { x: 6, y: 0, z: 4 },
+      { x: 6, y: 0, z: 5 },
+      { x: 6, y: 0, z: 6 },
+      { x: 7, y: 0, z: 6 },
+      { x: 8, y: 0, z: 6 },
+      { x: 9, y: 0, z: 6, isCheckPoint: true },
+      { x: 9, y: 0, z: 5 },
+      { x: 9, y: 0, z: 4 },
+      { x: 9, y: 0, z: 3 },
+      { x: 9, y: 0, z: 2 },
+      { x: 9, y: 0, z: 1 },
+      { x: 9, y: 0, z: 0 },
+      { x: 10, y: 0, z: 0 },
+      { x: 11, y: 0, z: 0 },
+      { x: 12, y: 0, z: 0 },
+      { x: 13, y: 0, z: 0 },
+      { x: 14, y: 0, z: 0 },
+      { x: 15, y: 0, z: 0, winAt: true },
+    ],
+    5: [
+      { x: 0, y: 0, z: 0 },
+      { x: 1, y: 0, z: 0 },
+      { x: 2, y: 0, z: 0 },
+      { x: 3, y: 0, z: 0 },
+      { x: 4, y: 0, z: 0 },
+      { x: 5, y: 0, z: 0 },
+      { x: 6, y: 0, z: 0 },
+      { x: 7, y: 0, z: 0 },
+      { x: 8, y: 0, z: 0 },
+      { x: 9, y: 0, z: 0 },
+      { x: 10, y: 0, z: 0 },
+      { x: 11, y: 0, z: 0 },
+      { x: 12, y: 0, z: 0 },
+      { x: 13, y: 0, z: 0 },
+      { x: 14, y: 0, z: 0 },
+      { x: 15, y: 0, z: 0 },
+      { x: 16, y: 0, z: 0 },
+      { x: 17, y: 0, z: 0 },
+      { x: 18, y: 0, z: 0 },
+      { x: 19, y: 0, z: 0 },
+      { x: 19, y: 0, z: -1 },
+      { x: 19, y: 0, z: 1 },
+      { x: 19, y: 1, z: -1 },
+      { x: 19, y: 1, z: 1 },
+      { x: 19, y: 2, z: -1 },
+      { x: 19, y: 2, z: 1 },
+      { x: 20, y: 0, z: 0, winAt: true },
+      { x: 21, y: 0, z: 1 },
+      { x: 21, y: 0, z: -1 },
+      { x: 21, y: 1, z: 1 },
+      { x: 21, y: 1, z: -1 },
+      { x: 21, y: 2, z: 1 },
+      { x: 21, y: 2, z: -1 },
+      {
+        x: 20,
+        y: 3,
+        z: 0,
+        script: "localStorage.setItem('game-finished', 'true')",
+      },
+    ],
+  },
+});
 return (
   <>
-<GameCmpnt.Game/>
+  <level.component/>
   </>
 )
 };
