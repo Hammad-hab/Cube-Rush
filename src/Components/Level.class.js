@@ -2,7 +2,7 @@ import * as THREE from "three";
 import User from "./User.controls";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import {AiOutlineReload} from "react-icons/ai"
-import { Link } from "react-router-dom";
+
 class Game {
   constructor(props) {
     localStorage.setItem("game-finished", "false ")
