@@ -15,11 +15,16 @@ const end = setInterval(() => {
     document.getElementById("canvas").remove()
     }
     console.log("ye")
-    alert("You have won the game")
+    document.body.innerHTML = "U have completed the game"
     clearInterval(end)
   } 
 }, 100);
- return <GameCmpnt.Game/>
+
+return (
+  <>
+<GameCmpnt.Game/>
+  </>
+)
 };
 
 export default App;
